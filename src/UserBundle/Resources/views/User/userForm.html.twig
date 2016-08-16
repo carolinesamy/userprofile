@@ -1,0 +1,31 @@
+{# empty Twig template #}
+
+{# to avoid html5 validation  put that in start form {'attr': {'novalidate': 'novalidate'} })#}
+
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
+{{ form_errors(form) }}
+<div>
+    {{ form_label(form.name, 'Enter Your Name') }}
+    {{ form_errors(form.name) }}
+    {{ form_widget(form.name) }}
+</div>
+
+
+
+<div>
+    {{ form_label(form.email ,'Enter Your Email') }}
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email) }}
+</div>
+
+<div>
+    {{ form_label(form.birthdate ,'Enter Your Birthday') }}
+    {{ form_errors(form.birthdate) }}
+    {{ form_widget(form.birthdate) }}
+</div>
+
+<div>
+    {{ form_widget(form.save) }}
+</div>
+{{ form_end(form) }}

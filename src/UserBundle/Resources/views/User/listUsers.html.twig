@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of Users {% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('adduser') }}">Add New User</a>
+    {% if users %}
+        <ul>
+            {% for user in users %}
+                <li> <a href="{{ path('show_user', {'userId': user.id}) }}">
+                        <h2>{{ user.name }}</h2>
+                    </a></li>
+                    {{ user.email }}
+                {% endfor %}
+        </ul>
+    {%endif%}
+{% endblock %}

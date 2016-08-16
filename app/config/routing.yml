@@ -1,0 +1,19 @@
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+#blog:
+#    resource: "@BlogBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    
+#number:
+#    path: /{_locale}/lucky/number
+#    defaults: { _controller: AppBundle:Lucky:number, _locale: ar  }
+#    requirements:
+#    _locale: "en|ar"

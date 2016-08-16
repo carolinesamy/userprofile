@@ -1,0 +1,31 @@
+
+{# to avoid html5 validation  put that in start form {'attr': {'novalidate': 'novalidate'} })#}
+
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
+{{ form_errors(form) }}
+<div>
+    {{ form_label(form.task, 'Task Description',{'attr': {'class': 'task_field'} }) }}
+    {{ form_errors(form.task) }}
+    {{ form_widget(form.task) }}
+</div>
+
+
+
+<div>
+    {{ form_label(form.dueDate ,'Date') }}
+    {{ form_errors(form.dueDate) }}
+    {{ form_widget(form.dueDate) }}
+</div>
+
+
+
+<div>
+    {{ form_widget(form.save) }}
+</div>
+{{ form_end(form) }}
+
+{#to access inputfield by id or name
+
+{{ form.task.vars.id }}
+{{ form.task.vars.full_name }}#}

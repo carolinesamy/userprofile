@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Details {% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('add_phone', {'userId': user.id}) }}">Add New Phone</a>
+    <li>Name :{{ user.name }}</li><br>
+    <li> Email: {{user.email}}</li><br>
+
+    {% if user.birthdate %}
+        <li>BirthDate :{{ user.birthdate|date("m/d/Y") }}</li><br>
+            {#{{ user.phones|length }}#}
+        {% endif %}
+
+    {% if user.phones|length > 1 %}
+
+        <li> Phone Numbers :
+            <ul>
+                {% for phone in user.phones %}
+                    <li>{{ phone.number }}</li><br>
+                    {% endfor%}
+            </ul>
+        </li> 
+
+    {% endif %}
+
+{% endblock %}
