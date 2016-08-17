@@ -1,5 +1,7 @@
 <?php
+
 #35967466#
+
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Product;

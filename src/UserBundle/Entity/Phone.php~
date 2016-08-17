@@ -1,17 +1,19 @@
 <?php
 
 namespace UserBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
-
+use UserBundle\Entity\Traits\TimestampableTrait;
 /**
  * Phone
  *
  * @ORM\Table(name="phone")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\PhoneRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Phone
 {
+    use TimestampableTrait;
     /**
      * @var int
      *
@@ -23,7 +25,7 @@ class Phone
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank()
      * @ORM\Column(name="number", type="string", length=20)
      */
     private $number;
@@ -47,13 +49,13 @@ class Phone
     /**
      * Set number
      *
-     * @param string $phone
+     * @param string $number
      *
      * @return Phone
      */
-    public function setNumber($phone)
+    public function setNumber($number )
     {
-        $this->phone = $phone;
+        $this->number = $number;
 
         return $this;
     }
@@ -65,7 +67,7 @@ class Phone
      */
     public function getNumber()
     {
-        return $this->phone;
+        return $this->number;
     }
 
     /**

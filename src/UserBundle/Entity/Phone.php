@@ -3,15 +3,17 @@
 namespace UserBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
-
+use UserBundle\Entity\Traits\TimestampableTrait;
 /**
  * Phone
  *
  * @ORM\Table(name="phone")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\PhoneRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Phone
 {
+    use TimestampableTrait;
     /**
      * @var int
      *

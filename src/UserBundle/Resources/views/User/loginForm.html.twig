@@ -1,0 +1,16 @@
+{# form to add new phpne #}
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
+
+{{ form_errors(form) }}
+
+<div>
+    {{ form_label(form.name ,'Enter Your name') }}
+    {{ form_errors(form.name) }}
+    {{ form_widget(form.name) }}
+</div>
+<div>
+    {{ form_widget(form.login) }}
+</div>
+    
+{{ form_end(form) }}

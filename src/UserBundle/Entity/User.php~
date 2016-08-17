@@ -1,9 +1,9 @@
 <?php
 
 namespace UserBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
-
+use UserBundle\Entity\Traits\TimestampableTrait;
 /**
  * User
  *
@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
 class User {
+    use TimestampableTrait;
 
     /**
      * @var int
@@ -23,14 +24,15 @@ class User {
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank()
      * @ORM\Column(name="name", type="string", length=30)
      */
     private $name;
 
     /**
      * @var string
-     *
+     *@Assert\Email()
+     * @Assert\NotBlank()
      * @ORM\Column(name="email", type="string", length=60)
      */
     private $email;
