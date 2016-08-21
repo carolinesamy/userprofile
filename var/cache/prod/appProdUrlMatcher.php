@@ -27,6 +27,34 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/user')) {
+            // list_users
+            if ($pathinfo === '/user/git') {
+                return array (  '_controller' => 'UserBundle\\Controller\\UserController::gitUsersAction',  '_route' => 'list_users',);
+            }
+
+            // login
+            if ($pathinfo === '/user/login') {
+                return array (  '_controller' => 'UserBundle\\Controller\\UserController::loginUsersAction',  '_route' => 'login',);
+            }
+
+            // adduser
+            if ($pathinfo === '/user/create') {
+                return array (  '_controller' => 'UserBundle\\Controller\\UserController::createUserAction',  '_route' => 'adduser',);
+            }
+
+            // show_user
+            if (0 === strpos($pathinfo, '/user/show') && preg_match('#^/user/show/(?P<userId>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'show_user')), array (  '_controller' => 'UserBundle\\Controller\\UserController::showUserAction',));
+            }
+
+            // add_phone
+            if (0 === strpos($pathinfo, '/user/add_phone') && preg_match('#^/user/add_phone/(?P<userId>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_phone')), array (  '_controller' => 'UserBundle\\Controller\\UserController::addPhoneAction',));
+            }
+
+        }
+
         // ipaddres
         if ($pathinfo === '/ipaddres') {
             return array (  '_controller' => 'AppBundle\\Controller\\HomeController::indexAction',  '_route' => 'ipaddres',);

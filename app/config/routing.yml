@@ -1,5 +1,5 @@
 user:
-    resource: "@UserBundle/Controller/UserController.php"
+    resource: "@UserBundle/Controller/"
     type:     annotation
     prefix:   /
 

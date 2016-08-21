@@ -9,6 +9,4 @@ parameters:
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
-#    # This will be parsed as string '@securepass'
-#    mailer_password: '@@securepass'
     secret: 062d33da8b1c73c1a81f18deefefdb67a42b2e77

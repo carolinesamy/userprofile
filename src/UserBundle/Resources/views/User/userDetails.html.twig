@@ -1,9 +1,11 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}User Details {% endblock %}
 
 {% block body %}
 
+    <a href="{{ path('list_users') }}">Back</a>
 
     <li>Name :{{ user.name }}</li><br>
     <li> Email: {{user.email}}</li><br>
@@ -12,17 +14,43 @@
         <li>BirthDate :{{ user.birthdate|date("m/d/Y") }}</li><br>
             {#{{ user.phones|length }}#}
         {% endif %}
-
+    <div id="p"></div>
     {% if user.phones|length > 0 %}
+        <div id='phone_div' data-path='{{ path('show_user')}}' >
+            <li> Phone Numbers :
+                <ul>
+                    {% for phone in user.phones %}
+                        <li>{{ phone.number }}</li><br>
 
-        <li> Phone Numbers :
-            <ul>
-                {% for phone in user.phones %}
-                    <li>{{ phone.number }}</li><br>
                     {% endfor%}
-            </ul>
-        </li> 
+                </ul>
+            </li> 
+        </div>
+    {% endif %}
+
+    {% if user.name == app.session.get('name') %}
+
+        <div class="container">
+            <!-- Trigger the modal with a button -->
+            {#            <button id="action" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add New Phone</button>#}
+
+            <a href="{{ path('add_phone') }}" id="action" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModal">Add New Phone</a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog" id='ph_div' data-path='{{ path('add_phone')}}'>
+                </div>
+            </div>
+
+        </div>
+
 
     {% endif %}
-    <a href="{{ path('add_phone', {'userId': user.id}) }}">Add New Phone</a>
+
+
+    {% block javascripts %}
+        {% javascripts '@UserBundle/Resources/public/js/*' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
 {% endblock %}

@@ -1,0 +1,37 @@
+
+        $(document).ready(function () {
+            
+            $('#action').click(function (event) {
+       
+                var path = $("#ph_div").attr("data-path");
+                console.log( path);
+                alert(hweh);
+
+                $.ajax({
+                    type: 'GET',
+                    url: path,
+                    
+                    success: function (data) {
+
+                        $(data).appendTo( ".modal-dialog" );
+                        console.log(data);
+                        $('#myModal').modal('open');
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown)
+                    {
+                        
+                        alert('Error : ' + errorThrown);
+                        
+                    }
+                });
+            });
+
+        });
+  /* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+

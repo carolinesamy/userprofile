@@ -11,14 +11,15 @@ class PhoneType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
 
-        $builder->add('number')
+        $builder->add('number');
                 
-                ->add('save', submitType::class);
+//                ->add('save', submitType::class);
     }
 
-//    public function configureOptions(OptionsResolver $resolver) {
-//        $resolver->setDefaults(array(
-//            'data_class' => 'UserBundle\Entity\phone',
-//        ));
-//    }
+    public function configureOptions(OptionsResolver $resolver) {
+        $resolver->setDefaults(array(
+            'data_class' => 'UserBundle\Entity\Phone',
+            'cascade_validation' => true,
+        ));
+    }
 }

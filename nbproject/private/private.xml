@@ -3,21 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Entity/Traits/TimestampableTrait.php</file>
-            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Controller/DefaultController.php</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/UserBundle.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/web/app_dev.php</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Form/LoginType.php</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Entity/Phone.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Controller/UserController.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/Resources/views/default/index.html.twig</file>
+            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/views/User/loginForm.html.twig</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/config/parameters.yml</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/AppCache.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/public/js/embdedPhoneForm.js</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/config/config.yml</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/config/routing.yml</file>
+            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Entity/Traits/TimestampableTrait.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/public/js/addphoneAction.js</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/views/User/userForm.html.twig</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Form/PhoneType.php</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/views/User/userPhoneForm.html.twig</file>
+            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Form/UserType.php</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/views/User/listUsers.html.twig</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Entity/User.php</file>
-            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Controller/UserController.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/web/app.php</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/AppBundle/EventListener/LocaleListener.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/Resources/views/base.html.twig</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/AppBundle/Controller/HomeController.php</file>
-            <file>file:/opt/lampp/htdocs/userprofile/app/Resources/views/default/index.html.twig</file>
-            <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/views/User/loginForm.html.twig</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/AppKernel.php</file>
+            <file>file:/opt/lampp/htdocs/userprofile/app/config/routing_dev.yml</file>
             <file>file:/opt/lampp/htdocs/userprofile/src/UserBundle/Resources/views/User/userDetails.html.twig</file>
         </group>
     </open-files>

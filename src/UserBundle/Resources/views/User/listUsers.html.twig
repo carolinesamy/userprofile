@@ -4,8 +4,7 @@
 
 {% block body %}
 
-    <a href="{{ path('adduser') }}">Add New User</a>
-    {% if users %}
+    {#{% if users %}
         <ul>
             {% for user in users %}
                 <li> <a href="{{ path('show_user', {'userId': user.id}) }}">
@@ -15,4 +14,27 @@
                 {% endfor %}
         </ul>
     {%endif%}
+#}
+    {%if  app.session.get('id')%} {#if session  #}
+
+        {% if pagination %}{#if users exist  #}
+            {% for user in pagination %}
+
+                <li><a href="{{ path('show_user', {'userId': user.id}) }}">
+                        <h2>{{ user.name }}</h2>
+                    </a>
+                </li>
+                <li>{{ user.email }}</li>
+
+            {% endfor %}
+
+            {# display navigation #}
+            <div class="navigation">
+
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {%endif%}{#end if users exist  #}
+    {%else%}
+        <h2>please login :)</h2>
+    {%endif%} {#end if session  #}
 {% endblock %}

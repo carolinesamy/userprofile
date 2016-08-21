@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use UserBundle\Form\PhoneType;
 
 class UserType extends AbstractType {
@@ -18,8 +19,18 @@ class UserType extends AbstractType {
                 ->add('birthdate', BirthdayType::class, array('placeholder' => array(
                         'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
             )))
-                /* ->add('phone',CollectionType::class,array('entry_type' => PhoneType::class ) ) */
+                 ->add('phones',CollectionType::class , array(
+                     'entry_type' => PhoneType::class , 
+                     'allow_add'    => true,) ) 
+                
                 ->add('save', submitType::class);
+    }
+    
+     public function configureOptions(OptionsResolver $resolver) {
+        $resolver->setDefaults(array(
+            'data_class' => 'UserBundle\Entity\User',
+            'cascade_validation' => true,
+        ));
     }
 
 }

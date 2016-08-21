@@ -27,6 +27,53 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/js')) {
+            if (0 === strpos($pathinfo, '/js/937165f')) {
+                // _assetic_937165f
+                if ($pathinfo === '/js/937165f.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '937165f',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_937165f',);
+                }
+
+                // _assetic_937165f_0
+                if ($pathinfo === '/js/937165f_addphoneAction_1.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '937165f',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_937165f_0',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/js/57456fa')) {
+                // _assetic_57456fa
+                if ($pathinfo === '/js/57456fa.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '57456fa',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_57456fa',);
+                }
+
+                if (0 === strpos($pathinfo, '/js/57456fa_part_1_')) {
+                    // _assetic_57456fa_0
+                    if ($pathinfo === '/js/57456fa_part_1_addphoneAction_1.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '57456fa',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_57456fa_0',);
+                    }
+
+                    // _assetic_57456fa_1
+                    if ($pathinfo === '/js/57456fa_part_1_dividecontrolr_2.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '57456fa',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_57456fa_1',);
+                    }
+
+                    // _assetic_57456fa_2
+                    if ($pathinfo === '/js/57456fa_part_1_embdedPhoneForm_3.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '57456fa',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_57456fa_2',);
+                    }
+
+                    // _assetic_57456fa_3
+                    if ($pathinfo === '/js/57456fa_part_1_selector_4.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '57456fa',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_57456fa_3',);
+                    }
+
+                }
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
@@ -100,29 +147,38 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // list_users
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'list_users');
+        if (0 === strpos($pathinfo, '/user')) {
+            // list_users
+            if ($pathinfo === '/user') {
+                return array (  '_controller' => 'UserBundle\\Controller\\UserController::listUsersAction',  '_route' => 'list_users',);
             }
 
-            return array (  '_controller' => 'UserBundle\\Controller\\UserController::listUsersAction',  '_route' => 'list_users',);
-        }
+            if (0 === strpos($pathinfo, '/user/log')) {
+                // login
+                if ($pathinfo === '/user/login') {
+                    return array (  '_controller' => 'UserBundle\\Controller\\UserController::loginUsersAction',  '_route' => 'login',);
+                }
 
-        if (0 === strpos($pathinfo, '/user')) {
+                // logout
+                if ($pathinfo === '/user/logout') {
+                    return array (  '_controller' => 'UserBundle\\Controller\\UserController::logoutUsersAction',  '_route' => 'logout',);
+                }
+
+            }
+
             // adduser
             if ($pathinfo === '/user/create') {
                 return array (  '_controller' => 'UserBundle\\Controller\\UserController::createUserAction',  '_route' => 'adduser',);
             }
 
             // show_user
-            if (0 === strpos($pathinfo, '/user/show') && preg_match('#^/user/show/(?P<userId>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'show_user')), array (  '_controller' => 'UserBundle\\Controller\\UserController::showUserAction',));
+            if ($pathinfo === '/user/show') {
+                return array (  '_controller' => 'UserBundle\\Controller\\UserController::showUserAction',  '_route' => 'show_user',);
             }
 
             // add_phone
-            if (0 === strpos($pathinfo, '/user/add_phone') && preg_match('#^/user/add_phone/(?P<userId>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_phone')), array (  '_controller' => 'UserBundle\\Controller\\UserController::addPhoneAction',));
+            if ($pathinfo === '/user/addphone') {
+                return array (  '_controller' => 'UserBundle\\Controller\\UserController::addPhoneAction',  '_route' => 'add_phone',);
             }
 
         }

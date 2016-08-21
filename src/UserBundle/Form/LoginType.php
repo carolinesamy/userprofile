@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
-class loginType extends AbstractType {
+class LoginType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
 

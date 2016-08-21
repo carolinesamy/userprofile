@@ -1,31 +1,56 @@
-{# empty Twig template #}
 
-{# to avoid html5 validation  put that in start form {'attr': {'novalidate': 'novalidate'} })#}
+{% extends 'base.html.twig' %}
 
+{% block title %}User Details {% endblock %}
 
-{{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
-{{ form_errors(form) }}
-<div>
-    {{ form_label(form.name, 'Enter Your Name') }}
-    {{ form_errors(form.name) }}
-    {{ form_widget(form.name) }}
-</div>
+{% block body %}
+
+    {# to avoid html5 validation  put that in start form {'attr': {'novalidate': 'novalidate'} })#}
 
 
+    {{ form_start(user_form, {'attr': {'novalidate': 'novalidate'} }) }}
+    {{ form_errors(user_form) }}
+    <div>
+        {{ form_label(user_form.name, 'Enter Your Name') }}
+        {{ form_errors(user_form.name) }}
+        {{ form_widget(user_form.name) }}
+    </div>
 
-<div>
-    {{ form_label(form.email ,'Enter Your Email') }}
-    {{ form_errors(form.email) }}
-    {{ form_widget(form.email) }}
-</div>
 
-<div>
-    {{ form_label(form.birthdate ,'Enter Your Birthday') }}
-    {{ form_errors(form.birthdate) }}
-    {{ form_widget(form.birthdate) }}
-</div>
 
-<div>
-    {{ form_widget(form.save) }}
-</div>
-{{ form_end(form) }}
+    <div>
+        {{ form_label(user_form.email ,'Enter Your Email') }}
+        {{ form_errors(user_form.email) }}
+        {{ form_widget(user_form.email) }}
+    </div>
+
+    <div>
+        {{ form_label(user_form.birthdate ,'Enter Your Birthday') }}
+        {{ form_errors(user_form.birthdate) }}
+        {{ form_widget(user_form.birthdate) }}
+    </div>
+    <div>
+        {{ form_label(user_form.phones,'Enter Your Phone') }}
+        {{ form_errors(user_form.phones) }}
+
+
+        <ul class="phones">
+            {% for phone in user_form.phones %}
+                <li>
+                    {{ form_widget(phone.number) }}
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div>
+        {{ form_widget(user_form.save) }}
+
+    </div>
+
+
+    {{ form_end(user_form) }}
+
+
+{%endblock%}

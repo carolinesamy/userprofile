@@ -132,11 +132,11 @@ class User {
     /**
      * Add phone
      *
-     * @param \UserBundle\Entity\User_Phones $phone
+     * @param \UserBundle\Entity\Phone $phone
      *
      * @return User
      */
-    public function addPhone(\UserBundle\Entity\User_Phones $phone) {
+    public function addPhone(\UserBundle\Entity\Phone $phone) {
         $this->phones[] = $phone;
 
         return $this;
@@ -145,9 +145,9 @@ class User {
     /**
      * Remove phone
      *
-     * @param \UserBundle\Entity\User_Phones $phone
+     * @param \UserBundle\Entity\Phone $phone
      */
-    public function removePhone(\UserBundle\Entity\User_Phones $phone) {
+    public function removePhone(\UserBundle\Entity\Phone $phone) {
         $this->phones->removeElement($phone);
     }
 

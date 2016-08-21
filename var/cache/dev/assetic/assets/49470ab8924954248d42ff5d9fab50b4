@@ -1,0 +1,40 @@
+
+        $(document).ready(function () {
+            
+            $('#action').click(function (event) {
+
+                
+                var datak = $('#Model_content').modal();
+                console.log(datak);
+                        
+                var path =" {{ path('add_phone') }} ";
+                console.log(datak, path);
+
+                $.ajax({
+                    type: 'POST',
+                    url: path,
+                    data: datak,
+                    success: function (data) {
+
+                        $('ul').append(datak.request);
+                        console.log(datak);
+                        $('#myModal').modal('hide');
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown)
+                    {
+                        
+                        alert('Error : ' + errorThrown);
+                        
+                    }
+                });
+            });
+
+        });
+  /* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
